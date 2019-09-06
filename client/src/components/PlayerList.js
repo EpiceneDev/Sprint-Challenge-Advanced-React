@@ -2,7 +2,7 @@ import React from 'react';
 import PlayerCard from './PlayerCard.js';
 
 class PlayerList extends React.Component {
-
+    
     componentDidMount() {
         axios.get("https://googletrends.github.io/data/")
             .then(res => {
