@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("CDU", this.state)
+    // console.log("CDU", this.state)
   }  
 
   render() {
