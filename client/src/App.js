@@ -20,8 +20,18 @@ class App extends React.Component {
         })
         .catch(err => {
             console.log('api error: ', err)
-        })
+        });
+    // axios
+    //   .get('https://googletrends.github.io/data/')
+    //   .then(res => {
+    //       console.log('second api returned: ', res ); 
+    //   })
+    //   .catch(err => console.log("second api req error!", err));
 }
+
+// componentDidUpdate() { 
+//   console.log("CDU: ", this.state)
+// }
 
   render() {
     return (
