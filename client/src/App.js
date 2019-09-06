@@ -16,7 +16,8 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("https://googletrends.github.io/data/")
         .then(res => {
-            console.log('api res: ', res)
+          console.log('api data: ', res.data)
+          // this.setState()
         })
         .catch(err => {
             console.log('api error: ', err)
