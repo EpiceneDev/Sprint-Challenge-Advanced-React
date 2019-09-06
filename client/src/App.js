@@ -1,5 +1,6 @@
 import React from 'react';
 import { PlayerList } from './components/PlayerList.js';
+import DarkModeBar from './components/DarkModeBar';
 import axios from 'axios';
 import './App.css';
 
@@ -7,17 +8,19 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      players: {},
-      location: "",
-      rank: ""
+      name: {},
+      country: "",
     };
   }
 
   componentDidMount() {
-    axios.get("https://googletrends.github.io/data/")
+    axios.get("http://localhost:5000/api/players")
         .then(res => {
           console.log('api data: ', res.data)
-          // this.setState()
+          res.data.map(player => {
+            this.setState(this.player);
+            console.log(this.player)
+          })
         })
         .catch(err => {
             console.log('api error: ', err)
@@ -37,6 +40,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <DarkModeBar />
         <PlayerList />
       </div>
     );
