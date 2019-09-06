@@ -15,9 +15,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:5000/api/players")
         .then(res => {
-          // console.log('people', res.data);
           this.setState({ players: res.data })
-          // console.log('players', this.state);
           })
         .catch(err => {
             console.log('api error: ', err)
@@ -29,7 +27,7 @@ class App extends React.Component {
   }  
 
   render() {
-    console.log('render', this.state.players)
+    // console.log('render', this.state.players)
     return (
       <div className="App">
         <DarkModeBar />

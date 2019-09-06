@@ -2,21 +2,24 @@ import React from 'react';
 
 const PlayerCard = (props) => {
     const info = [props.players];
-    console.log("playercard info: ", info);
+    console.log("playercard props: ", info);
+
+        
 
     return (
         <>
-            {info.map((player, key) => {
-                console.log("player ", player)
+            {info.map(player => {
+                return (Array.from(player).forEach(element => {
+                    // console.log('element', element)
+                    return (
+                        <div className="player-card" key={element.id}>
+                            <h2>Hello, my name is {element.name}.</h2>
+                            <h3>I play ball for {element.country}.</h3>
+                            <p>I am ranked number {element.searches} in online searches.</p>
+                        </div>
+                    )
+                }))
             
-                
-                return (
-                    <div className="player-card" key={player.id}>
-                        <h2>Hello, my name is {player.name}.</h2>
-                        <h3>I play ball for {player.country}.</h3>
-                        <p>I am ranked number {player.searches} in online searches.</p>
-                    </div>
-                )
             })}
         </>
     )   
