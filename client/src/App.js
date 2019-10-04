@@ -1,6 +1,8 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import axios from 'axios';
+import Navbar from "./components/Navbar";
+import {XYPlot, LineSeries} from 'react-vis';
 
  class App extends React.Component {
   constructor(props) {
@@ -23,10 +25,19 @@ import axios from 'axios';
 
   render() {
     return (
-      <div>
+      <div className="App">
+        <Navbar />
+        {/* <XYPlot height={300} width={300}>
+          <LineSeries data={this.state.data} />
+        </XYPlot> */}
         {this.state.data.map(person => {
           return (
-          <h1>{person.name}</h1>
+            <div className="player">
+              <h1>{person.name}</h1>
+              <h2>{person.country}</h2>
+              <h2>Search ranking: {person.searches}</h2>
+              <hr/>
+            </div>
           )
         })} 
       </div>
