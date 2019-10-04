@@ -13,9 +13,10 @@ import axios from 'axios';
   componentDidMount() {
     axios.get("http://localhost:5000/api/players")
     .then(res => {
-      console.log(res.data.name)
+      console.log(res.data.name);
       this.setState({ data: res.data });
-    });
+    })
+    .catch(err => console.log("OOPS ", err))
   }
 
  
