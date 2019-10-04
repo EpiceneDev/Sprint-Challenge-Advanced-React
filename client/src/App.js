@@ -13,7 +13,7 @@ import axios from 'axios';
   componentDidMount() {
     axios.get("http://localhost:5000/api/players")
     .then(res => {
-      console.log(res.data.name);
+      console.log("API RETURNS:", res.data);
       this.setState({ data: res.data });
     })
     .catch(err => console.log("OOPS ", err))
